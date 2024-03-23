@@ -1,0 +1,29 @@
+.inpt {
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    margin: 8px;
+    padding: 5px;
+    background-color: rgb(223, 225, 226);
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+}
+
+.grp {
+    background-color: aqua;
+    display: block;
+    top: 1rem;
+    left: -10rem;
+}
+
+@media print {
+    .scrollContainer {
+        overflow: hidden;
+        height: fit-content;
+    }
+
+    .buttonPrint {
+        display: none !important;
+    }
+}
