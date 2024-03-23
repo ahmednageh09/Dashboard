@@ -22,12 +22,10 @@ function App() {
   return (
     <Router>
       <ToastContainer autoClose={toastAutoCloseTime} />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route exact path="/login" name="Login Page" element={<Login />} />
-          <Route path="*" name="Home" element={<Layout />} />
-        </Routes>
-      </Suspense>
+      <Routes>
+        <Route exact path="/login" name="Login Page" element={<Login />} />
+        <Route path="*" name="Home" element={<Layout />} />
+      </Routes>
     </Router>
   )
 }
