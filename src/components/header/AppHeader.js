@@ -41,7 +41,7 @@ const AppHeader = () => {
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
 
-        <CHeaderBrand className="mx-auto d-md-none" to="/">
+        <CHeaderBrand className="me-auto d-md-none" to="/">
           <Link to={'/'}>
             <img src={logo} style={{ width: '5rem', height: '40px' }} alt="Logo" />
           </Link>
@@ -55,9 +55,6 @@ const AppHeader = () => {
           </CNavItem>
           <CNavItem>
             <CNavLink href="#">Users</CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">Settings</CNavLink>
           </CNavItem>
         </CHeaderNav>
 
@@ -73,12 +70,12 @@ const AppHeader = () => {
               {lang}
             </button>
           </CNavItem>
-          <CNavItem>
+          <CNavItem className="d-none d-md-flex">
             <CNavLink href="#">
               <CIcon icon={cilBell} size="lg" />
             </CNavLink>
           </CNavItem>
-          <CNavItem>
+          <CNavItem className="d-none d-md-flex">
             <CNavLink href="#">
               <CIcon icon={cilEnvelopeOpen} size="lg" />
             </CNavLink>

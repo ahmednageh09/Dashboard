@@ -448,8 +448,8 @@ export default function Products() {
   return (
     <>
       <div className="p-4">
-        <div className="d-flex ms-auto me-auto justify-content-around flex-column flex-md-row align-items-center">
-          <div className="d-flex justify-content-around gap-3">
+        <div className="d-flex justify-content-around flex-column flex-md-row align-items-center gap-3">
+          <div className="d-flex justify-content-between gap-2">
             {/* Filter Button */}
             <Dropdown>
               <Dropdown.Toggle variant="primary" id="dropdown-basic">
@@ -542,8 +542,10 @@ export default function Products() {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
+          </div>
+          <div className="d-flex justify-content-between gap-2">
             {/* Search Prodcuts */}
-            <div className="d-flex col-md-12 align-items-center">
+            <div className="d-flex align-items-center">
               <input
                 type="search"
                 placeholder="Prodcut Name"
@@ -575,15 +577,18 @@ export default function Products() {
                 Search
               </CButton>
             </div>
+            {/* Add Profucts  */}
+            <div>
+              <CButton className="text-nowrap" onClick={() => newProduct(createNewProduct())}>
+                Add Product
+              </CButton>
+            </div>
           </div>
-          <CButton className="text-nowrap m-2" onClick={() => newProduct(createNewProduct())}>
-            Add Product
-          </CButton>
         </div>
         <div className="d-flex justify-content-around row">
           {/* Displaying Products */}
           {products.length === 0 ? (
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="d-flex justify-content-center align-items-center mt-4">
               <CSpinner color="primary" />
             </div>
           ) : (
