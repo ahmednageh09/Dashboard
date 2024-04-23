@@ -29,7 +29,7 @@ axiosInstance.interceptors.request.use(
     } else {
       // Redirect to login and show error toast for all other unauthorized requests
       window.location.href = '/login'
-      toast.error('You are not authorized, please try again!')
+      toast.error('You are not authorized, please try again!', { toastId: 'authError' })
     }
 
     return config
@@ -45,8 +45,11 @@ axiosInstance.interceptors.response.use(
   },
   async (error) => {
     if (error.response && error.response.status === 401) {
-      window.location.href = '/login'
-      toast.error('Session expired. Please log in again.')
+      // Check if the user is not on the login page and not logging out
+      if (window.location.pathname !== '/login' && !error.config.url.endsWith('/logout')) {
+        window.location.href = '/login'
+        toast.error('Session expired. Please log in again.', { toastId: 'sessionError' })
+      }
     }
     return Promise.reject(error)
   },

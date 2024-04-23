@@ -14,7 +14,7 @@ export const loginService = async (email, password) => {
     // Set the token after successful login
     if (response && response.data.data.token) {
       cookies.set('token', response.data.data.token)
-      toast.success('Login Successful')
+      toast.success('Login Successful', { toastId: 'sucessLogin' })
     } else {
       toast.warning('Wrong credentials, try again')
     }

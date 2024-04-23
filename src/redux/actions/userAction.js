@@ -25,7 +25,7 @@ export const loginAction = (userData, navigate) => async (dispatch) => {
 
 export const logoutAction = (navigate) => async (dispatch) => {
   try {
-    logoutService()
+    await logoutService()
     dispatch({
       type: 'LOGOUT',
     })
